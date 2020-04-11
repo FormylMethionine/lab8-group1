@@ -4,6 +4,7 @@ class string
 		char* str_ = nullptr;
 		int nchar_ = 0;
 	public:
+		string(const string&);
 		string(const char*);
 		char* c_str() const;
 };

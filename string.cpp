@@ -19,6 +19,15 @@ int strlen(const char* str){
 	return i;
 }
 
+string::string(const string& p){
+	char* p_str = p.c_str();
+	nchar_ = strlen(p_str);
+	str_ = new char[nchar_];
+	for(int i = 0; i<nchar_; i++){
+		str_[i] = p_str[i];
+	}
+};
+
 string::string(const char* init){
 	nchar_ = strlen(init),
 	str_ = new char[nchar_];

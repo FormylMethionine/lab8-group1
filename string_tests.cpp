@@ -11,7 +11,9 @@ bool test_c_str(string& test){
 }
 
 int main(){
-	string test("Hello World"); 
-	std::cout << test_c_str(test) << std::endl;
+	string test_cstring_constructor("Hello World"); 
+	string test_copy_constructor(test_cstring_constructor); 
+	std::cout << test_c_str(test_cstring_constructor) << std::endl;
+	std::cout << test_c_str(test_copy_constructor) << std::endl;
 	return 0;
 }
