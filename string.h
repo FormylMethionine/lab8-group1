@@ -5,7 +5,7 @@ class string
 		int nchar_ = 0;
 	public:
 		string(const char*);
-		char* c_str();
+		char* c_str() const;
 };
 
 bool str_eq(const char*, const char*);

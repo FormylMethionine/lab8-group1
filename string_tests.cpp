@@ -1,7 +1,7 @@
 #include "./string.h"
 #include <iostream>
 
-bool test_c_str(string test){
+bool test_c_str(string& test){
 	char* value = test.c_str();
 	if (str_eq(value, "Hello World") && !str_eq(value, "Hello world")){
 		return true;

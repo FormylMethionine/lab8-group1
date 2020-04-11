@@ -2,12 +2,15 @@
 #include <iostream>
 
 bool str_eq(const char* p1, const char* p2){
-	for (int i = 0; i<strlen(p1)+1 && i<strlen(p2)+1; i++){
-		if (p1[i] != p2[i]){
-			return false;
+	if (strlen(p1) == strlen(p2)){
+		for (int i = 0; i<strlen(p1)+1; i++){
+			if (p1[i] != p2[i]){
+				return false;
+			}
 		}
+		return true;
 	}
-	return true;
+	return false;
 }
 
 int strlen(const char* str){
@@ -24,10 +27,11 @@ string::string(const char* init){
 	}
 };
 
-char* string::c_str(){
+char* string::c_str() const{
 	char* ret = new char[nchar_+1];
 	for (int i = 0; i<nchar_; i++){
 		ret[i] = str_[i];
 	}
+	ret[nchar_] = '\0';
 	return ret;
 };
