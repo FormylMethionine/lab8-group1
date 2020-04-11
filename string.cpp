@@ -2,7 +2,7 @@
 #include <iostream>
 
 bool str_eq(const char* p1, const char* p2){
-	for (int i = 0; p1[i] != '\0' && p2[i] != '\0'; i++){
+	for (int i = 0; i<strlen(p1)+1 && i<strlen(p2)+1; i++){
 		if (p1[i] != p2[i]){
 			return false;
 		}
@@ -10,14 +10,24 @@ bool str_eq(const char* p1, const char* p2){
 	return true;
 }
 
+int strlen(const char* str){
+	int i = 0;
+	for (i; str[i] != '\0'; i++){}
+	return i;
+}
+
 string::string(const char* init){
-	str_ = new char[100];
-	for(int i = 0; init[i] != '\0'; i++){
+	nchar_ = strlen(init),
+	str_ = new char[nchar_];
+	for(int i = 0; i<nchar_; i++){
 		str_[i] = init[i];
-		nchar_ = i;
 	}
 };
 
 char* string::c_str(){
-	return str_;
+	char* ret = new char[nchar_+1];
+	for (int i = 0; i<nchar_; i++){
+		ret[i] = str_[i];
+	}
+	return ret;
 };

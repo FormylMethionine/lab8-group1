@@ -9,3 +9,4 @@ class string
 };
 
 bool str_eq(const char*, const char*);
+int strlen(const char*);
