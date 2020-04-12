@@ -48,3 +48,8 @@ char* string::c_str() const{
 int string::size() const{
 	return nchar_*sizeof(char);
 }
+
+void string::empty(){
+	delete[] str_;
+	str_ = new char[0];
+}
