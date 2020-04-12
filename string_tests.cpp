@@ -19,8 +19,8 @@ bool test_size(string& test, int expected_size){
 	}
 }
 
-bool test_empty(string& test){
-	test.empty();
+bool test_clear(string& test){
+	test.clear();
 	if (strlen(test.c_str()) == 0){
 		return true;
 	} else {
@@ -31,7 +31,7 @@ bool test_empty(string& test){
 int main(){
 	string test_cstring_constructor("Hello World"); 
 	string test_copy_constructor(test_cstring_constructor); 
-	string test_empty_str("Hello World"); 
+	string test_clear_str("Hello World"); 
 
 	std::cout << test_c_str(test_cstring_constructor) << std::endl;
 	std::cout << test_c_str(test_copy_constructor) << std::endl;
@@ -39,7 +39,7 @@ int main(){
 	std::cout << test_size(test_cstring_constructor, 11) << std::endl;
 	std::cout << test_size(test_copy_constructor, 11) << std::endl;
 
-	std::cout << test_empty(test_empty_str) << std::endl;
+	std::cout << test_clear(test_clear_str) << std::endl;
 
 	return 0;
 }

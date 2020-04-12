@@ -49,7 +49,7 @@ int string::size() const{
 	return nchar_*sizeof(char);
 }
 
-void string::empty(){
+void string::clear(){
 	delete[] str_;
 	str_ = new char[0];
 }
