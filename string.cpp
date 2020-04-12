@@ -55,3 +55,9 @@ void string::clear(){
 	delete[] str_;
 	str_ = new char[0];
 }
+
+string& string::operator =(char c){
+	nchar_ = 1;
+	str_[0] = c;
+	return *this;
+}

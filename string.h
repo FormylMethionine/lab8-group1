@@ -10,6 +10,7 @@ class string
 		char* c_str() const;
 		int size() const;
 		void clear();
+		string& operator =(char);
 };
 
 bool str_eq(const char*, const char*);
