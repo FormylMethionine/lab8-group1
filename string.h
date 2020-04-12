@@ -3,6 +3,7 @@ class string
 	private:
 		char* str_ = nullptr;
 		int nchar_ = 0;
+		int tabsize_ = 0;
 	public:
 		string(const string&);
 		string(const char*);
