@@ -7,6 +7,7 @@ class string
 		string(const string&);
 		string(const char*);
 		char* c_str() const;
+		int size() const;
 };
 
 bool str_eq(const char*, const char*);

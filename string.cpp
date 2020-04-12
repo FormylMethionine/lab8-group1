@@ -44,3 +44,7 @@ char* string::c_str() const{
 	ret[nchar_] = '\0';
 	return ret;
 };
+
+int string::size() const{
+	return nchar_*sizeof(char);
+}
