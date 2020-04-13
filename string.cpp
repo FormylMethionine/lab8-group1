@@ -19,7 +19,7 @@ int strlen(const char* str){
 	return i;
 }
 
-string operator +(string& p1, const char* p2){
+string operator +(const string& p1, const char* p2){
 	char* p1_c = p1.c_str();
 	int lenp1 = strlen(p1_c);
 	int lenp2 = strlen(p2);

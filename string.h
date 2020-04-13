@@ -13,6 +13,6 @@ class string
 		string& operator =(char);
 };
 
-string operator +(string&, const char*);
+string operator +(const string&, const char*);
 bool str_eq(const char*, const char*);
 int strlen(const char*);
