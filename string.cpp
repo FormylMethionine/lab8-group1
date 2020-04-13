@@ -52,8 +52,10 @@ int string::size() const{
 }
 
 void string::clear(){
+	nchar_ = 0;
+	tabsize_ = 0;
 	delete[] str_;
-	str_ = new char[0];
+	str_ = new char[tabsize_];
 }
 
 string& string::operator =(char c){
