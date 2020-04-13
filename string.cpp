@@ -19,6 +19,23 @@ int strlen(const char* str){
 	return i;
 }
 
+string operator +(string& p1, const char* p2){
+	char* p1_c = p1.c_str();
+	int lenp1 = strlen(p1_c);
+	int lenp2 = strlen(p2);
+	int len = lenp1 + lenp2;
+	char* ret_c = new char[len];
+	int i = 0;
+	for (i; i<lenp1; i++){
+		ret_c[i] = p1_c[i];
+	}
+	for (i; i<len; i++){
+		ret_c[i] = p2[i - lenp1];
+	}
+	string ret(ret_c);
+	return ret;
+}
+
 string::string(const string& p){
 	char* p_str = p.c_str();
 	nchar_ = strlen(p_str);

@@ -39,6 +39,16 @@ bool test_eq_char(string& test, char c){
 	}
 }
 
+bool test_addition(){
+	string test("Hello ");
+	string value = test + "World";
+	if (str_eq(value.c_str(), "Hello World")){
+		return true;
+	} else {
+		return false;
+	}
+}
+
 int main(){
 	string test_cstring_constructor("Hello World"); 
 	string test_copy_constructor(test_cstring_constructor); 
@@ -55,6 +65,8 @@ int main(){
 	
 	std::cout << test_eq_char(test_eq_char_str, 'c') << std::endl;
 	std::cout << test_eq_char(test_clear_str, 'c') << std::endl;
+
+	std::cout << test_addition() << std::endl;
 
 	return 0;
 }
