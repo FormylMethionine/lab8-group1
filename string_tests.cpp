@@ -32,6 +32,7 @@ bool test_eq_char(string& test, char c){
 	test = c;
 	char str_test[1];
 	str_test[0] = c;
+	std::cout << test.c_str()[0] << std::endl;
 	if (str_eq(test.c_str(), str_test)){
 		return true;
 	} else {
@@ -54,6 +55,7 @@ int main(){
 	std::cout << test_clear(test_clear_str) << std::endl;
 	
 	std::cout << test_eq_char(test_eq_char_str, 'c') << std::endl;
+	std::cout << test_eq_char(test_clear_str, 'c') << std::endl;
 
 	return 0;
 }
