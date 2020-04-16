@@ -1,18 +1,6 @@
 #include "./string.h"
 #include <iostream>
 
-bool str_eq(const char* p1, const char* p2){
-	if (strlen(p1) == strlen(p2)){
-		for (int i = 0; i<strlen(p1)+1; i++){
-			if (p1[i] != p2[i]){
-				return false;
-			}
-		}
-		return true;
-	}
-	return false;
-}
-
 int strlen(const char* str){
 	int i = 0;
 	for (i; str[i] != '\0'; i++){}
