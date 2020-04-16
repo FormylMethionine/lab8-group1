@@ -80,3 +80,7 @@ string& string::operator =(char c){
 	str_[0] = c;
 	return *this;
 }
+
+int string::length(){
+	return nchar_*sizeof(char);
+}

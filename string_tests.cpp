@@ -49,6 +49,17 @@ bool test_addition(){
 	}
 }
 
+bool test_length(){
+	string test1("Hello");
+	string test2("Hello");
+	test2 = 'c';
+	if (test1.length() == 5*sizeof(char) && test2.length() == sizeof(char)){
+		return true;
+	} else {
+		return false;
+	}
+}
+
 int main(){
 	string test_cstring_constructor("Hello World"); 
 	string test_copy_constructor(test_cstring_constructor); 
@@ -67,6 +78,8 @@ int main(){
 	std::cout << test_eq_char(test_clear_str, 'c') << std::endl;
 
 	std::cout << test_addition() << std::endl;
+
+	std::cout << test_length() << std::endl;
 
 	return 0;
 }

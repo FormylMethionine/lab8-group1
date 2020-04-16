@@ -11,6 +11,7 @@ class string
 		int size() const;
 		void clear();
 		string& operator =(char);
+		int length(); 
 };
 
 string operator +(const string&, const char*);
