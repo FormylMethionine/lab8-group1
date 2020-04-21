@@ -7,6 +7,14 @@ int strlen(const char* str){
 	return i;
 }
 
+int min(int arg1, int arg2){
+	if (arg1 < arg2){
+		return arg1;
+	} else {
+		return arg2;
+	}
+}
+
 string operator +(const string& p1, const char* p2){
 	char* p1_c = p1.c_str();
 	int lenp1 = strlen(p1_c);
