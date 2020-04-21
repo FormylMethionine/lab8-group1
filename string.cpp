@@ -34,7 +34,7 @@ string operator +(const string& p1, const char* p2){
 
 string::string(const string& p){
 	char* p_str = p.c_str();
-	nchar_ = strlen(p_str);
+	nchar_ = min(strlen(p_str), maxsize_);
 	tabsize_ = nchar_;
 	str_ = new char[tabsize_];
 	for(int i = 0; i<nchar_; i++){
@@ -43,7 +43,7 @@ string::string(const string& p){
 };
 
 string::string(const char* init){
-	nchar_ = strlen(init),
+	nchar_ = min(strlen(init), maxsize_);
 	tabsize_ = nchar_;
 	str_ = new char[tabsize_];
 	for(int i = 0; i<nchar_; i++){
