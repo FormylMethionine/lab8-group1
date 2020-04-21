@@ -1,9 +1,10 @@
 class string
 {
 	private:
-		char* str_ = nullptr;
-		int nchar_ = 0;
-		int tabsize_ = 0;
+		char* str_ = nullptr; //array of char
+		int nchar_ = 0; //number of (relevant) char in the array
+		int tabsize_ = 0; //actual size of the array
+		int maxsize_ = 100; //maximal size of the array
 	public:
 		string(const string&);
 		string(const char*);
