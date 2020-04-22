@@ -23,5 +23,7 @@ int main(){
 
 	std::cout << test_length() << std::endl;
 
+	std::cout << test_maxsize() << std::endl;
+
 	return 0;
 }

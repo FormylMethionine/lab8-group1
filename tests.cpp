@@ -72,3 +72,16 @@ bool test_length(){
 		return false;
 	}
 }
+
+bool test_maxsize(){
+	char* test1 = new char[105];
+	for (int i=0; i<105; i++){
+		test1[i]='a';
+	}
+	string test2(test1);
+	if (test2.length() == 100 && strlen(test2.c_str()) == 100){
+		return true;
+	} else {
+		return false;
+	}
+}
