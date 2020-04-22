@@ -85,3 +85,17 @@ bool test_maxsize(){
 		return false;
 	}
 }
+
+bool test_capacity(){
+	string test1("Hello World");
+	char* test2 = new char[105];
+	for (int i=0; i<105; i++){
+		test2[i]='a';
+	}
+	string test3(test2);
+	if (test1.capacity() == 11 && test3.capacity() == 100){
+		return true;
+	} else {
+		return false;
+	}
+}

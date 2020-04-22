@@ -25,5 +25,7 @@ int main(){
 
 	std::cout << test_maxsize() << std::endl;
 
+	std::cout << test_capacity() << std::endl;
+
 	return 0;
 }
