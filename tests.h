@@ -5,3 +5,4 @@ bool test_clear(string&);
 bool test_eq_char(string&, char);
 bool test_addition();
 bool test_length();
+bool test_maxsize();
