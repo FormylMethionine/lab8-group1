@@ -72,5 +72,3 @@ bool test_length(){
 		return false;
 	}
 }
-
-

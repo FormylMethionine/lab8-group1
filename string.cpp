@@ -72,3 +72,9 @@ string& string::operator =(char c){
 int string::length(){
 	return nchar_*sizeof(char);
 }
+
+
+size_t string::capacity() const{
+	size_t ret = tabsize_*sizeof(char);
+	return ret;
+}

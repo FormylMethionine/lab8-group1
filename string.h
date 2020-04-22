@@ -15,6 +15,7 @@ class string
 		void clear();
 		string& operator =(char);
 		int length(); 
+		size_t capacity() const;
 };
 
 string operator +(const string&, const char*);
