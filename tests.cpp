@@ -45,7 +45,9 @@ bool test_eq_char(string& test, char c){
 	test = c;
 	char str_test[1];
 	str_test[0] = c;
-	if (str_eq(test.c_str(), str_test)){
+	string test1("");
+	test1 = c;
+	if (str_eq(test.c_str(), str_test) && str_eq(test1.c_str(), str_test)){
 		return true;
 	} else {
 		return false;
