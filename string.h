@@ -1,3 +1,5 @@
+#include <cstddef>
+
 class string
 {
 	private:
@@ -9,7 +11,7 @@ class string
 		string(const string&);
 		string(const char*);
 		char* c_str() const;
-		int size() const;
+		size_t size() const;
 		void clear();
 		string& operator =(char);
 		int length(); 

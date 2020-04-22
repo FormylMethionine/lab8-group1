@@ -1,5 +1,4 @@
 #include "./string.h"
-#include <iostream>
 
 int strlen(const char* str){
 	int i = 0;
@@ -52,8 +51,9 @@ char* string::c_str() const{
 	return ret;
 };
 
-int string::size() const{
-	return nchar_*sizeof(char);
+size_t string::size() const{
+	size_t ret = nchar_*sizeof(char);
+	return ret;
 }
 
 void string::clear(){
