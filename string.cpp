@@ -77,7 +77,7 @@ string& string::operator =(char c){
 	return *this;
 }
 
-int string::length(){
+size_t string::length() const{
 	return nchar_*sizeof(char);
 }
 
