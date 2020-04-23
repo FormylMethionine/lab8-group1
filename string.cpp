@@ -86,3 +86,11 @@ size_t string::capacity() const{
 	size_t ret = tabsize_*sizeof(char);
 	return ret;
 }
+
+bool string::empty() const{
+	if (nchar_ == 0){
+		return true;
+	} else {
+		return false;
+	}
+}

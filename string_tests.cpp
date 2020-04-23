@@ -27,5 +27,7 @@ int main(){
 
 	std::cout << test_capacity() << std::endl;
 
+	std::cout << test_empty() << std::endl;
+
 	return 0;
 }

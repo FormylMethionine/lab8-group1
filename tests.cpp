@@ -101,3 +101,13 @@ bool test_capacity(){
 		return false;
 	}
 }
+
+bool test_empty(){
+	string test1("");
+	string test2("42");
+	if (test1.empty() && !test2.empty()){
+		return true;
+	} else {
+		return false;
+	}
+}
