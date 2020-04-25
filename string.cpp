@@ -94,3 +94,14 @@ bool string::empty() const{
 		return false;
 	}
 }
+
+void string::reserve(size_t n){
+	int new_size = min(maxsize_, n);
+	char* new_str = new char[new_size];
+	for (int i = 0; i<nchar_; i++){
+		new_str[i] = str_[i];
+	}
+	delete[] str_;
+	str_ = new_str;
+	tabsize_ = new_size;
+}

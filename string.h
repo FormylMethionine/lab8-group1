@@ -17,6 +17,7 @@ class string
 		size_t length() const; 
 		size_t capacity() const;
 		bool empty() const;
+		void reserve(size_t n);
 };
 
 string operator +(const string&, const char*);

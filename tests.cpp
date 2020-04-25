@@ -111,3 +111,15 @@ bool test_empty(){
 		return false;
 	}
 }
+
+bool test_reserve(){
+	string test1("Salut, et encore merci pour le poisson");
+	string test2("Le dernier restaurant avant la fin du monde");
+	test1.reserve(50);
+	test2.reserve(105);
+	if (test1.capacity() == 50 && test2.capacity() == 100){
+		return true;
+	} else {
+		return false;
+	}
+}

@@ -29,5 +29,7 @@ int main(){
 
 	std::cout << test_empty() << std::endl;
 
+	std::cout << test_reserve() << std::endl;
+
 	return 0;
 }

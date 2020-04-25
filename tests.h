@@ -8,3 +8,4 @@ bool test_length();
 bool test_maxsize();
 bool test_capacity();
 bool test_empty();
+bool test_reserve();
