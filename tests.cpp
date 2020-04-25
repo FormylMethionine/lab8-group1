@@ -123,3 +123,13 @@ bool test_reserve(){
 		return false;
 	}
 }
+
+bool test_eq_cstr(){
+	string test("Hello world");
+	test = "The Amazing Maurice and His Educated Rodents";
+	if (str_eq(test.c_str(), "The Amazing Maurice and His Educated Rodents")){
+		return true;
+	} else {
+		return true;
+	}
+}

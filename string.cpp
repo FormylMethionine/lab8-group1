@@ -109,3 +109,22 @@ void string::reserve(size_t n){
 	str_ = new_str;
 	tabsize_ = new_size;
 }
+
+string& string::operator=(const char* s){
+	int size_s = strlen(s);
+	if (size_s >= tabsize_){
+		nchar_ = size_s;
+		for (int i = 0; i<nchar_; i++){
+			str_[i] = s[i];
+		}
+	} else {
+		nchar_ = min(maxsize_, size_s);
+		tabsize_ = nchar_;
+		delete[] str_;
+		str_ = new char[tabsize_];
+		for (int i = 0; i<nchar_; i++){
+			str_[i] = s[i];
+		}
+	}
+	return *this;
+}
