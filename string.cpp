@@ -50,6 +50,10 @@ string::string(const char* init){
 	}
 };
 
+string::~string(){	
+	delete[] str_;
+}
+
 char* string::c_str() const{
 	char* ret = new char[nchar_+1];
 	for (int i = 0; i<nchar_; i++){

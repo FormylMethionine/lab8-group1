@@ -10,6 +10,7 @@ class string
 	public:
 		string(const string&);
 		string(const char*);
+		~string();
 		char* c_str() const;
 		size_t size() const;
 		void clear();
