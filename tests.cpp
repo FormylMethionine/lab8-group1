@@ -133,3 +133,15 @@ bool test_eq_cstr(){
 		return true;
 	}
 }
+
+
+bool test_plus_2str(){
+	string test1("Hello ");
+	string test2("World");
+	string add = test1 + test2;
+	if (str_eq(add.c_str(), "Hello World")){
+		return true;
+	} else {
+		return false;
+	}
+}

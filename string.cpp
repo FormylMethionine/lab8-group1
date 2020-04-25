@@ -31,6 +31,24 @@ string operator +(const string& p1, const char* p2){
 	return ret;
 }
 
+string operator +(const string& s1, const string& s2){
+	char* s1_c = s1.c_str();
+	char* s2_c = s2.c_str();
+	int lens1 = strlen(s1_c);
+	int lens2 = strlen(s2_c);
+	int len = lens1 + lens2;
+	char* ret_c = new char[len];
+	int i = 0;
+	for (i; i<lens1; i++){
+		ret_c[i] = s1_c[i];
+	}
+	for (i; i<len; i++){
+		ret_c[i] = s2_c[i - lens1];
+	}
+	string ret(ret_c);
+	return ret;
+}
+
 string::string(const string& p){
 	char* p_str = p.c_str();
 	nchar_ = min(strlen(p_str), maxsize_);

@@ -33,5 +33,7 @@ int main(){
 
 	std::cout << test_eq_cstr() << std::endl;
 
+	std::cout << test_plus_2str() << std::endl;
+
 	return 0;
 }
