@@ -7,9 +7,9 @@ class string
 {
 	private:
 		char* str_ = nullptr; //array of char
-		int nchar_ = 0; //number of (relevant) char in the array
-		int tabsize_ = 0; //actual size of the array
-		int maxsize_ = 100; //maximal size of the array
+		size_t nchar_ = 0; //number of (relevant) char in the array
+		size_t tabsize_ = 0; //actual size of the array
+		size_t maxsize_ = 100; //maximal size of the array
 	public:
 		//Constructors
 		string(const string&);
@@ -26,6 +26,7 @@ class string
 		//void
 		void clear();
 		void reserve(size_t);
+		void resize(size_t);
 		//bool
 		bool empty() const;
 		//Operators

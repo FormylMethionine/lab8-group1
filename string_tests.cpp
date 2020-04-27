@@ -49,5 +49,8 @@ int main(){
 	std::cout << "test for size_t maxsize() const: "
 		<< test_maxsize() << std::endl;
 
+	std::cout << "test for void resize(size_t): "
+		<< test_resize() << std::endl;
+
 	return 0;
 }

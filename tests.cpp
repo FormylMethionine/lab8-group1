@@ -146,3 +146,19 @@ bool test_plus_2str(){
 		return false;
 	}
 }
+
+bool test_resize(){
+	string test1("I'm running out of ideas");
+	string test2(test1);
+	string test3(test2);
+	test1.resize(2);
+	test2.resize(50);
+	test3.resize(120);
+	if (str_eq(test1.c_str(), "I'")
+			&& test2.capacity() == 50
+			&& test3.capacity() == 100){
+		return true;
+	} else {
+		return false;
+	}
+}
