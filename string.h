@@ -22,6 +22,7 @@ class string
 		size_t size() const;
 		size_t length() const; 
 		size_t capacity() const;
+		size_t maxsize() const;
 		//void
 		void clear();
 		void reserve(size_t);

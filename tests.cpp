@@ -81,7 +81,8 @@ bool test_maxsize(){
 		test1[i]='a';
 	}
 	string test2(test1);
-	if (test2.length() == 100 && strlen(test2.c_str()) == 100){
+	if (test2.length() == 100 && strlen(test2.c_str()) == 100 
+			&& test2.maxsize() == 100){
 		return true;
 	} else {
 		return false;

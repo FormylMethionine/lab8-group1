@@ -8,9 +8,6 @@ int main(){
 	string test_clear_str("Hello World"); 
 	string test_eq_char_str("Hello World");
 
-	std::cout << "string can't exceed the maximal size: "
-		<< test_maxsize() << std::endl;
-
 	std::cout << "test for cstring constructor: "
 		<< test_c_str(test_cstring_constructor) << std::endl;
 
@@ -48,6 +45,9 @@ int main(){
 
 	std::cout << "test for string operator =(const char*, const char*): "
 		<< test_plus_2str() << std::endl;
+
+	std::cout << "test for size_t maxsize() const: "
+		<< test_maxsize() << std::endl;
 
 	return 0;
 }
