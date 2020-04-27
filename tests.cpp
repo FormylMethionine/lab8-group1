@@ -14,7 +14,8 @@ bool str_eq(const char* p1, const char* p2){
 	return false;
 }
 
-bool test_c_str(string& test){
+bool test_c_str(){
+	string test("Hello World");
 	char* value = test.c_str();
 	if (str_eq(value, "Hello World") && !str_eq(value, "Hello world")){
 		return true;
@@ -23,16 +24,17 @@ bool test_c_str(string& test){
 	}
 }
 
-bool test_size(string& test, int expected_size){
-	int value = test.size();
-	if (value == expected_size){
+bool test_size(){
+	string test("Mostly Harmless");
+	if (test.size() == strlen("Mostly Harmless")){
 		return true;
 	} else {
 		return false;
 	}
 }
 
-bool test_clear(string& test){
+bool test_clear(){
+	string test("shenanigans");
 	test.clear();
 	if (strlen(test.c_str()) == 0){
 		return true;
@@ -41,13 +43,14 @@ bool test_clear(string& test){
 	}
 }
 
-bool test_eq_char(string& test, char c){
-	test = c;
+bool test_eq_char(){
+	string test1("doesn't matter");
+	test1 = 'c';
 	char str_test[1];
-	str_test[0] = c;
-	string test1("");
-	test1 = c;
-	if (str_eq(test.c_str(), str_test) && str_eq(test1.c_str(), str_test)){
+	str_test[0] = 'c';
+	string test2("");
+	test1 = 'c';
+	if (str_eq(test1.c_str(), str_test) && str_eq(test2.c_str(), str_test)){
 		return true;
 	} else {
 		return false;

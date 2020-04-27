@@ -3,25 +3,20 @@
 #include <iostream>
 
 int main(){
-	string test_cstring_constructor("Hello World"); 
-	string test_copy_constructor(test_cstring_constructor); 
-	string test_clear_str("Hello World"); 
-	string test_eq_char_str("Hello World");
-
 	std::cout << "test for cstring constructor: "
-		<< test_c_str(test_cstring_constructor) << std::endl;
+		<< test_c_str() << std::endl;
 
 	std::cout << "test for copy constructor: "
-		<< test_c_str(test_copy_constructor) << std::endl;
+		<< test_c_str() << std::endl;
 	
 	std::cout << "test for size_t size() const method: "
-		<< test_size(test_cstring_constructor, 11) << std::endl;
+		<< test_size() << std::endl;
 
 	std::cout << "test for void clear() method: "
-		<< test_clear(test_clear_str) << std::endl;
+		<< test_clear() << std::endl;
 	
 	std::cout << "test for string& operator =(const char): "
-		<< test_eq_char(test_eq_char_str, 'c') << std::endl;
+		<< test_eq_char() << std::endl;
 	//std::cout << test_eq_char(test_clear_str, 'c') << std::endl;
 	//second test need to be combined in first
 
