@@ -1,5 +1,8 @@
 #include <cstddef>
 
+//Non member function, applying to cstrings
+int strlen(const char*);
+
 class string
 {
 	private:
@@ -8,20 +11,27 @@ class string
 		int tabsize_ = 0; //actual size of the array
 		int maxsize_ = 100; //maximal size of the array
 	public:
+		//Constructors
 		string(const string&);
 		string(const char*);
+		//Destructor
 		~string();
+		//char*
 		char* c_str() const;
+		//size_t
 		size_t size() const;
-		void clear();
-		string& operator =(char);
 		size_t length() const; 
 		size_t capacity() const;
-		bool empty() const;
+		//void
+		void clear();
 		void reserve(size_t);
+		//bool
+		bool empty() const;
+		//Operators
+		string& operator =(char);
 		string& operator =(const char*);
 };
 
+//Non member operators
 string operator +(const string&, const char*);
 string operator +(const string&, const string&);
-int strlen(const char*);
