@@ -50,7 +50,7 @@ bool test_eq_char(){
 	str_test[0] = 'c';
 	string test2("");
 	test1 = 'c';
-	if (str_eq(test1.c_str(), str_test) && str_eq(test2.c_str(), str_test)){
+	if (str_eq(test1.c_str(), str_test)){
 		return true;
 	} else {
 		return false;

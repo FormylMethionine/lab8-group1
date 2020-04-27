@@ -140,9 +140,18 @@ bool string::empty() const{
 //============================================================================
 
 string& string::operator =(char c){
-	nchar_ = 1;
-	str_[0] = c;
-	return *this;
+	if (nchar_ == 0){
+		delete[] str_;
+		str_ = new char[1];
+		str_[0] = c;
+		nchar_ = 1;
+		tabsize_ = 1;
+		return *this;
+	} else {
+		nchar_ = 1;
+		str_[0] = c;
+		return *this;
+	}
 }
 
 string& string::operator=(const char* s){
