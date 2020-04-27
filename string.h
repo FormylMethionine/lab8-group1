@@ -18,11 +18,10 @@ class string
 		size_t length() const; 
 		size_t capacity() const;
 		bool empty() const;
-		void reserve(size_t n);
+		void reserve(size_t);
 		string& operator =(const char*);
 };
 
 string operator +(const string&, const char*);
 string operator +(const string&, const string&);
-bool str_eq(const char*, const char*);
 int strlen(const char*);
