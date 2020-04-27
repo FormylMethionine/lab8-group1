@@ -140,7 +140,7 @@ bool string::empty() const{
 //============================================================================
 
 string& string::operator =(char c){
-	if (nchar_ == 0){
+	if (tabsize_ == 0){
 		delete[] str_;
 		str_ = new char[1];
 		str_[0] = c;
