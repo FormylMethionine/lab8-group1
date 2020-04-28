@@ -32,6 +32,7 @@ class string
 		//Operators
 		string& operator =(char);
 		string& operator =(const char*);
+		string& operator =(const string&);
 };
 
 //Non member operators

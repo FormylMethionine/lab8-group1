@@ -47,5 +47,8 @@ int main(){
 	std::cout << "test for void resize(size_t): "
 		<< test_resize() << std::endl;
 
+	std::cout << "test for string& operator =(const string&): "
+		<< test_op_eq_str() << std::endl;
+
 	return 0;
 }

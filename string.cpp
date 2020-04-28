@@ -173,6 +173,27 @@ string& string::operator=(const char* s){
 	return *this;
 }
 
+string& string::operator =(const string& str){
+	char* cstr = str.c_str();
+	int size_s = strlen(cstr);
+	if (size_s >= tabsize_){
+		nchar_ = size_s;
+		for (int i = 0; i<nchar_; i++){
+			str_[i] = cstr[i];
+		}
+	} else {
+		nchar_ = min(maxsize_, size_s);
+		tabsize_ = nchar_;
+		delete[] str_;
+		str_ = new char[tabsize_];
+		for (int i = 0; i<nchar_; i++){
+			str_[i] = cstr[i];
+		}
+	}
+	return *this;
+}
+
+
 //============================================================================
 // Non member operators
 //============================================================================

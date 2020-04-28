@@ -12,3 +12,4 @@ bool test_reserve();
 bool test_eq_cstr();
 bool test_plus_2str();
 bool test_resize();
+bool test_op_eq_str();

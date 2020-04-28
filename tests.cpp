@@ -165,3 +165,15 @@ bool test_resize(){
 		return false;
 	}
 }
+
+bool test_op_eq_str(){
+	string test("OOOOOO");
+	string copy = test;
+	if (str_eq(copy.c_str(), test.c_str())
+			&& copy.length() == test.length()
+			&& copy.capacity() == test.capacity()){
+		return true;
+	} else {
+		return false;
+	}
+}
