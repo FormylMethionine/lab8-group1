@@ -177,3 +177,13 @@ bool test_op_eq_str(){
 		return false;
 	}
 }
+
+bool test_op_plus_char(){
+	string test("O");
+	test = test + 'k';
+	if (str_eq(test.c_str(), "Ok")){
+		return true;
+	} else {
+		return false;
+	}
+}

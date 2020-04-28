@@ -225,3 +225,10 @@ string operator +(const string& s1, const string& s2){
 	string ret = s1 + s2_c;
 	return ret;
 }
+
+string operator +(const string& s, const char c){
+	char c2[1];
+	c2[0] = c;
+	string ret = s + c2;
+	return ret;
+}
