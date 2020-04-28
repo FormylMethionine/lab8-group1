@@ -22,6 +22,11 @@ int min(int arg1, int arg2){
 // Constructors
 //============================================================================
 
+string::string(){
+	tabsize_ = 0;
+	nchar_ = 0;
+}
+
 string::string(const string& p){
 	char* p_str = p.c_str();
 	nchar_ = min(strlen(p_str), maxsize_);
@@ -154,7 +159,7 @@ string& string::operator =(char c){
 	}
 }
 
-string& string::operator=(const char* s){
+string& string::operator =(const char* s){
 	int size_s = strlen(s);
 	if (size_s >= tabsize_){
 		nchar_ = size_s;

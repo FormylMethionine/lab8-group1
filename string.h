@@ -12,6 +12,7 @@ class string
 		size_t maxsize_ = 100; //maximal size of the array
 	public:
 		//Constructors
+		string();
 		string(const string&);
 		string(const char*);
 		//Destructor
@@ -38,3 +39,4 @@ class string
 //Non member operators
 string operator +(const string&, const char*);
 string operator +(const string&, const string&);
+string operator +(const string&, const char);
