@@ -38,7 +38,7 @@ int main(){
 	std::cout << "test for string operator =(const char*): "
 		<< test_eq_cstr() << std::endl;
 
-	std::cout << "test for string operator =(const char*, const char*): "
+	std::cout << "test for string operator +(const string&, const string&): "
 		<< test_plus_2str() << std::endl;
 
 	std::cout << "test for size_t maxsize() const: "
