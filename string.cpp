@@ -22,6 +22,11 @@ int min(int arg1, int arg2){
 // Constructors
 //============================================================================
 
+string::string(){
+	tabsize_ = 0;
+	nchar_ = 0;
+}
+
 string::string(const string& p){
 	char* p_str = p.c_str();
 	nchar_ = min(strlen(p_str), maxsize_);
@@ -154,7 +159,7 @@ string& string::operator =(char c){
 	}
 }
 
-string& string::operator=(const char* s){
+string& string::operator =(const char* s){
 	int size_s = strlen(s);
 	if (size_s >= tabsize_){
 		nchar_ = size_s;
@@ -172,6 +177,27 @@ string& string::operator=(const char* s){
 	}
 	return *this;
 }
+
+string& string::operator =(const string& str){
+	char* cstr = str.c_str();
+	int size_s = strlen(cstr);
+	if (size_s >= tabsize_){
+		nchar_ = size_s;
+		for (int i = 0; i<nchar_; i++){
+			str_[i] = cstr[i];
+		}
+	} else {
+		nchar_ = min(maxsize_, size_s);
+		tabsize_ = nchar_;
+		delete[] str_;
+		str_ = new char[tabsize_];
+		for (int i = 0; i<nchar_; i++){
+			str_[i] = cstr[i];
+		}
+	}
+	return *this;
+}
+
 
 //============================================================================
 // Non member operators
@@ -195,19 +221,14 @@ string operator +(const string& p1, const char* p2){
 }
 
 string operator +(const string& s1, const string& s2){
-	char* s1_c = s1.c_str();
 	char* s2_c = s2.c_str();
-	int lens1 = strlen(s1_c);
-	int lens2 = strlen(s2_c);
-	int len = lens1 + lens2;
-	char* ret_c = new char[len];
-	int i = 0;
-	for (i; i<lens1; i++){
-		ret_c[i] = s1_c[i];
-	}
-	for (i; i<len; i++){
-		ret_c[i] = s2_c[i - lens1];
-	}
-	string ret(ret_c);
+	string ret = s1 + s2_c;
+	return ret;
+}
+
+string operator +(const string& s, const char c){
+	char c2[1];
+	c2[0] = c;
+	string ret = s + c2;
 	return ret;
 }

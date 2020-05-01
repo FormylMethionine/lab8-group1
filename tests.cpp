@@ -14,36 +14,36 @@ bool str_eq(const char* p1, const char* p2){
 	return false;
 }
 
-bool test_c_str(){
+const char* test_c_str(){
 	string test("Hello World");
 	char* value = test.c_str();
 	if (str_eq(value, "Hello World") && !str_eq(value, "Hello world")){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_size(){
+const char* test_size(){
 	string test("Mostly Harmless");
 	if (test.size() == strlen("Mostly Harmless")){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_clear(){
+const char* test_clear(){
 	string test("shenanigans");
 	test.clear();
 	if (strlen(test.c_str()) == 0){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_eq_char(){
+const char* test_eq_char(){
 	string test1("doesn't matter");
 	test1 = 'c';
 	char str_test[1];
@@ -51,34 +51,34 @@ bool test_eq_char(){
 	string test2("");
 	test1 = 'c';
 	if (str_eq(test1.c_str(), str_test)){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_addition(){
+const char* test_addition(){
 	string test("Hello ");
 	string value = test + "World";
 	if (str_eq(value.c_str(), "Hello World")){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_length(){
+const char* test_length(){
 	string test1("Hello");
 	string test2("Hello");
 	test2 = 'c';
 	if (test1.length() == 5*sizeof(char) && test2.length() == sizeof(char)){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_maxsize(){
+const char* test_maxsize(){
 	char* test1 = new char[105];
 	for (int i=0; i<105; i++){
 		test1[i]='a';
@@ -86,13 +86,13 @@ bool test_maxsize(){
 	string test2(test1);
 	if (test2.length() == 100 && strlen(test2.c_str()) == 100 
 			&& test2.maxsize() == 100){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_capacity(){
+const char* test_capacity(){
 	string test1("Hello World");
 	char* test2 = new char[105];
 	for (int i=0; i<105; i++){
@@ -100,57 +100,57 @@ bool test_capacity(){
 	}
 	string test3(test2);
 	if (test1.capacity() == 11 && test3.capacity() == 100){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_empty(){
+const char* test_empty(){
 	string test1("");
 	string test2("42");
 	if (test1.empty() && !test2.empty()){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_reserve(){
+const char* test_reserve(){
 	string test1("Salut, et encore merci pour le poisson");
 	string test2("Le dernier restaurant avant la fin du monde");
 	test1.reserve(50);
 	test2.reserve(105);
 	if (test1.capacity() == 50 && test2.capacity() == 100){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_eq_cstr(){
+const char* test_eq_cstr(){
 	string test("Hello world");
 	test = "The Amazing Maurice and His Educated Rodents";
 	if (str_eq(test.c_str(), "The Amazing Maurice and His Educated Rodents")){
-		return true;
+		return "PASS";
 	} else {
-		return true;
+		return "PASS";
 	}
 }
 
 
-bool test_plus_2str(){
+const char* test_plus_2str(){
 	string test1("Hello ");
 	string test2("World");
 	string add = test1 + test2;
 	if (str_eq(add.c_str(), "Hello World")){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
 	}
 }
 
-bool test_resize(){
+const char* test_resize(){
 	string test1("I'm running out of ideas");
 	string test2(test1);
 	string test3(test2);
@@ -160,8 +160,30 @@ bool test_resize(){
 	if (str_eq(test1.c_str(), "I'")
 			&& test2.capacity() == 50
 			&& test3.capacity() == 100){
-		return true;
+		return "PASS";
 	} else {
-		return false;
+		return "FAIL";
+	}
+}
+
+const char* test_op_eq_str(){
+	string test("OOOOOO");
+	string copy = test;
+	if (str_eq(copy.c_str(), test.c_str())
+			&& copy.length() == test.length()
+			&& copy.capacity() == test.capacity()){
+		return "PASS";
+	} else {
+		return "FAIL";
+	}
+}
+
+const char* test_op_plus_char(){
+	string test("O");
+	test = test + 'k';
+	if (str_eq(test.c_str(), "Ok")){
+		return "PASS";
+	} else {
+		return "FAIL";
 	}
 }
